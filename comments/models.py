@@ -1,12 +1,9 @@
 from django.db import models
-from django.contrib.auth import get_user_model
-from posts.models import Post
-
-User = get_user_model()
+from django.contrib.auth.models import users
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    comment_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(users, on_delete=models.CASCADE)
+    comment_text=models.CharField(max_length=50)
+    created_at = models.DateTimeField(False, True, editable=False)
+    updated_at = models.DateTimeField(True, True, editable=False)

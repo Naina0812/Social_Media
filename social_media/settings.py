@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'social_media.users',
     'social_media.posts',
     'social_media.comments',
+    'social_media.apis',
     'rest_framework',
 ]
 
