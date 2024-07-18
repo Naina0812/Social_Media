@@ -1,11 +1,13 @@
 from django.db import models
-
-# Create your models here.
-# from django.contrib.auth.models import users
+from django.contrib.auth.models import User
+from posts.models import Post
 
 class Comment(models.Model):
-    # comment_id = models.AutoField(primary_key=True)
-    # user_id = models.ForeignKey(users, on_delete=models.CASCADE)
-    comment_text=models.CharField(max_length=50)
-    # created_at = models.DateTimeField(False, True, editable=False)
-    # updated_at = models.DateTimeField(True, True, editable=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)  
+    comment = models.TextField()  
+    created = models.DateTimeField(auto_now_add=True)  
+    updated = models.DateTimeField(auto_now=True)  
+
+    def __str__(self):
+        return f'Comment {self.id} by {self.user.username} on Post {self.post.id}'
