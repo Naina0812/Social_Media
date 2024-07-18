@@ -10,7 +10,7 @@ MEDIA_CHOICES = (
 class Post(models.Model):
     post_id= models.AutoField(primary_key=True)
     user_id = models.ForeignKey(users, on_delete=models.CASCADE)
-    description = models.CharField(max_length=20)
+    description = models.TextField()
     created_at = models.DateTimeField(False, True, editable=False)
     updated_at = models.DateTimeField(True, True, editable=False)
     media_url = models.CharField(("1"),upload_to='url')

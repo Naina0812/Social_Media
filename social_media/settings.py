@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_media.users',
-    'social_media.posts',
-    'social_media.comments',
-    'social_media.apis',
+    'users',
+    'posts',
+    'comments',
+    'apis',
     'rest_framework',
 ]
 
