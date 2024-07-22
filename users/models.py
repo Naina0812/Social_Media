@@ -21,6 +21,13 @@ class Profile(models.Model):
 
 
      def __str__(self):
-        return self.title
+        return f'{self.user.username} Profile'
      
 
+"""
+1. install mysql.
+2. link mysql with django
+3. define path of all the apis.
+4. create viewsets and serilzser.
+5. read about required quries.
+"""
